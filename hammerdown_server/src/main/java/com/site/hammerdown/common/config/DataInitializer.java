@@ -43,15 +43,15 @@ public class DataInitializer {
                         return roleRepository.save(newSellerRole);
                     });
 
-            Role godRole = roleRepository.findByRoleName(AppRole.ROLE_SUPER_ADMIN)
+            Role godRole = roleRepository.findByRoleName(AppRole.ROLE_SUPERADMIN)
                     .orElseGet(() -> {
-                        Role newAdminRole = new Role(AppRole.ROLE_SUPER_ADMIN);
+                        Role newAdminRole = new Role(AppRole.ROLE_SUPERADMIN);
                         return roleRepository.save(newAdminRole);
                     });
 
             Set<Role> userRoles = Set.of(userRole);
             Set<Role> adminRoles = Set.of(adminRole);
-            Set<Role> godRoles = Set.of(userRole, adminRole, godRole);
+            Set<Role> godRoles = Set.of(godRole);
 
 
             // Create users if not already present
