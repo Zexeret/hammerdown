@@ -4,7 +4,6 @@ import com.site.hammerdown.common.exceptions.APIException;
 import com.site.hammerdown.common.model.AppRole;
 import com.site.hammerdown.common.model.Role;
 import com.site.hammerdown.common.repository.RoleRepository;
-import com.site.hammerdown.security.jwt.JwtUtils;
 import com.site.hammerdown.security.services.UserDetailsImpl;
 import com.site.hammerdown.user.model.User;
 import com.site.hammerdown.user.payload.LoginRequest;
@@ -28,12 +27,10 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
-    private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder encoder;
-
 
     @Override
     public UserDTO authenticateUserFromCookie(LoginRequest loginRequest) {
