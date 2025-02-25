@@ -1,8 +1,8 @@
 package com.site.hammerdown.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.site.hammerdown.model.APIResponseStatus;
-import com.site.hammerdown.payload.APIResponse;
+import com.site.hammerdown.common.model.APIResponseStatus;
+import com.site.hammerdown.common.model.APIResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
