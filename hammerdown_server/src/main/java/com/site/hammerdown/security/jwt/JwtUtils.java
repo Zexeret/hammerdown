@@ -2,6 +2,7 @@ package com.site.hammerdown.security.jwt;
 
 import com.site.hammerdown.security.ApplicationSecurityProperties;
 import com.site.hammerdown.security.services.UserDetailsImpl;
+import com.site.hammerdown.user.payload.UserDTO;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
@@ -44,17 +45,13 @@ public class JwtUtils {
         }
     }
 
-    public ResponseCookie generateJwtCookieFromUserDetails(UserDetailsImpl userPrincipal) {
-        String jwt = generateTokenFromUsername(userPrincipal.getUsername());
-        return generateJwtCookieFromToken(jwt);
-    }
 
     public ResponseCookie generateJwtCookieFromUserName(String username) {
         String jwt = generateTokenFromUsername(username);
         return generateJwtCookieFromToken(jwt);
     }
 
-    public ResponseCookie generateJwtCookieFromToken(String token) {
+    private ResponseCookie generateJwtCookieFromToken(String token) {
         ResponseCookie cookie = ResponseCookie.from(jwtCookieName, token)
                 .path("/api")
                 .maxAge(1 * 60 * 60)
@@ -72,7 +69,7 @@ public class JwtUtils {
     }
 
 
-    public String generateTokenFromUsername(String userName) {
+    private String generateTokenFromUsername(String userName) {
         return Jwts.builder()
                 .subject(userName)
                 .issuedAt(new Date())
@@ -94,7 +91,7 @@ public class JwtUtils {
 
     public boolean validateJwtToken(String authToken) {
         try {
-            System.out.println("Validate");
+            log.info("Validating JWT token: {}", authToken);
             Jwts.parser().verifyWith((SecretKey) key()).build().parseSignedClaims(authToken);
             return true;
         } catch (MalformedJwtException e) {

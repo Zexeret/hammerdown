@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "a51d3207-c5f2-4f59-9842-334cdc343ed0",
+		"name": "HammerDown",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40798538"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user2\",\r\n    \"password\":\"password\",\r\n    \"email\":\"test@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/auth/signout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/public/hello",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"public",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user Role check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/userrole",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"userrole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Role Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "God Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/god",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"god"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

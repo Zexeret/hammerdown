@@ -1,7 +1,7 @@
 package com.site.hammerdown.security.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.site.hammerdown.model.User;
+import com.site.hammerdown.user.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

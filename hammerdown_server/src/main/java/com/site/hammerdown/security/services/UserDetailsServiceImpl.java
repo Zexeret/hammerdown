@@ -1,16 +1,14 @@
 package com.site.hammerdown.security.services;
 
 
-import com.site.hammerdown.model.User;
-import com.site.hammerdown.repository.UserRepository;
+import com.site.hammerdown.user.model.User;
+import com.site.hammerdown.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 
 @Service
@@ -27,6 +25,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return UserDetailsImpl.buildFromUser(user);
     }
-
-
 }
