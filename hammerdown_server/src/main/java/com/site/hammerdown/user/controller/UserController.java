@@ -22,7 +22,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-
+    
     @GetMapping("/user")
     public ResponseEntity<APIResponse> getUserDetails(Authentication authentication) {
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
